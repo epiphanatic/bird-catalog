@@ -1,0 +1,53 @@
+{% extends "content.html" %}
+
+{% block content2 %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{category.name}} Items ({{count}} items)</h2>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            {% if 'username' in session %}
+            <span class="add-cat">
+                <a href="{{url_for('new_item')}}">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    Add Item
+                </a>
+            </span>
+            &nbsp; | &nbsp;
+            <span class="add-cat">
+                <a class="cat-edit"
+                    href="{{url_for('edit_category', category_id=category.id)}}">
+                    <i class="fa fa-cog" aria-hidden="true"></i>
+                    Edit Category
+                </a>
+            </span>
+            &nbsp; | &nbsp;
+            <span class="add-cat">
+                <a class="cat-del"
+                    href="{{url_for('delete_category', category_id=category.id)}}">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                    Delete Category
+                </a>
+            </span>
+
+            <br><br>
+            {% endif %}
+            <ul class="items">
+                {% for i in items %}
+                <a href="{{url_for('show_description', item_id=i.id, source='items')}}">
+                    <li >
+                        {{i.name}}
+                    </li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

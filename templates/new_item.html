@@ -1,0 +1,65 @@
+{% extends "content.html" %}
+
+{% block content2 %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>New Item</h2>
+        </div>
+    </div>
+
+    <form action="{{ url_for('new_item')}}" method="post">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Title:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type ="text" size="40" name="name" required autofocus>
+            </div>
+        </div>
+        <br>
+        <!--TODO: add file upload for image and make DB storage-->
+        <div class="row">
+            <div class="col-md-12">
+                <label>Category:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <select name="cat">
+                    {% for c in categories %}
+                    <option value="{{c.id}}">{{c.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <br>
+            <div class="col-md-12">
+                <label>Description:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <textarea rows='10' cols='40' name="description" required></textarea>
+            </div>
+        </div>
+         <div class="row">
+            <br>
+            <div class="col-md-12">
+                <span>
+                    <a href = "{{url_for('main')}}"> Cancel &nbsp;&nbsp;</a>
+                </span>
+                <span>
+                    <input class="btn btn-primary" type="submit" value="Create">
+                </span>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

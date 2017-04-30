@@ -1,0 +1,204 @@
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3310d1");
+
+@font-face {font-family: 'MuseoSansRounded-300';src: url('../static/webfonts/3310D1_0_0.eot');src: url('../static/webfonts/3310D1_0_0.eot?#iefix') format('embedded-opentype'),url('../static/webfonts/3310D1_0_0.woff2') format('woff2'),url('../static/webfonts/3310D1_0_0.woff') format('woff'),url('../static/webfonts/3310D1_0_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'MuseoSansRounded-500';src: url('../static/webfonts/3310D1_1_0.eot');src: url('../static/webfonts/3310D1_1_0.eot?#iefix') format('embedded-opentype'),url('../static/webfonts/3310D1_1_0.woff2') format('woff2'),url('../static/webfonts/3310D1_1_0.woff') format('woff'),url('../static/webfonts/3310D1_1_0.ttf') format('truetype');}
+
+
+@font-face {font-family: 'MuseoSansRounded-700';src: url('../static/webfonts/3310D1_2_0.eot');src: url('../static/webfonts/3310D1_2_0.eot?#iefix') format('embedded-opentype'),url('../static/webfonts/3310D1_2_0.woff2') format('woff2'),url('../static/webfonts/3310D1_2_0.woff') format('woff'),url('../static/webfonts/3310D1_2_0.ttf') format('truetype');}
+
+/*// luminate color palette*/
+/*// black: 32332f*/
+/*// darker green: 229905*/
+/*// lighter green: 82cc00*/
+/*// grey: e5e5e5*/
+/*// yellow: ffce00*/
+
+* {
+    font-family: MuseoSansRounded-500;
+}
+
+input {
+    font-family: MuseoSansRounded-500 !important;
+}
+
+a {
+    text-decoration: none;
+    color: #32332f;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #32332f;
+    cursor: pointer;
+}
+
+a button {
+    text-decoration: none !important;
+    background-color: #e5e5e5;
+    color: #32332f;
+}
+
+a button:hover {
+    text-decoration: none !important;
+    background-color: #ffce00;
+    color: white;
+}
+
+ul {
+    list-style: none;
+}
+
+textarea {
+    border: solid 1px #e5e5e5;
+}
+
+hr {
+    margin-top: .5em;
+}
+
+p {
+    margin-right: 5%;
+}
+
+.app-header {
+    background-color: #229905;
+}
+
+.app-header button {
+    margin: .5em 0 0 0;
+}
+
+.app-header a {
+    color: white;
+}
+
+.header-text {
+    font-size: 2.25em;
+    color: white;
+}
+
+.logo img {
+    height: 2em;
+    margin: 0 0 .75em 0;
+    padding-right: 1em;
+}
+
+
+.btn.btn-primary {
+    border: none;
+    background-color: #e5e5e5;
+    color: #32332f;
+    width: 5em;
+}
+
+.btn.btn-primary:hover {
+    border: none;
+    background-color: #ffce00;
+    color: white;
+}
+
+
+/*folloing removes all borders, background color, etc when a button is clicked*/
+.btn.btn-primary:focus, .btn.btn-primary:active, .btn.btn-primary.active, .btn.btn-primary:focus:active {
+    background-image: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #ffce00;
+}
+
+.flash {
+    padding-top: .5em;
+    background: #ffce00;
+    color: #32332f;
+}
+
+.flash ul {
+    list-style: none;
+}
+
+.login-container {
+    border: solid 1px #e5e5e5;
+    padding: 0 0 1em 0;
+    margin-top: -1em;
+}
+
+.login-container > div {
+    padding: .5em 0 .5em 0;
+}
+
+.login-container h1 {
+    padding: .5em 0 .5em 0;
+    background-color: #229905;
+    color: white;
+}
+
+.login-container .auth-button {
+
+}
+
+#app {
+    padding: 2em 0 2em 0;
+    border: solid 1px #e5e5e5;
+}
+
+.cat-panel {
+    border-right: solid 1px #e5e5e5;
+}
+
+.cat-panel h2, .content h2 {
+    margin-top: 0;
+    font-weight: bold;
+    color: #82cc00;
+}
+
+.cat-panel ul, .content ul {
+    padding-left: 0 !important;
+}
+
+.cat-panel li, .content li {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: .1em 0 .5em .5em;
+    border-radius: 10px;
+}
+
+.cat-panel li:hover, .content li:hover {
+    background-color: #e5e5e5;
+    cursor: pointer;
+}
+
+.add-cat {
+    color: #32332f;
+    font-size: 1.2em;
+    padding: 0 0 0 .5em;
+}
+
+.add-cat a:hover {
+    cursor: pointer;
+}
+
+.cat-del {
+
+}
+
+.cat-edit {
+
+}
+
+
+.items li:hover {
+    background: transparent;
+    border-left: solid 5px #ffce00;
+}
+
+.parent-cat {
+    color: #858585;
+}
+
+/*.cat-panel>ul>li.active {*/
+    /*background-color: #ffce00 !important;*/
+/*}*/

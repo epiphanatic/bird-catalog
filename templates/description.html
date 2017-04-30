@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{item.name}}</h2>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <p><strong>Description: &nbsp;</strong>{{item.description}}</p>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            {% if 'username' in session %}
+            <span>
+                <a href="{{url_for('edit_item', item_id=item.id)}}">Edit</a>
+            </span>
+            &nbsp; | &nbsp;
+            <span>
+                <a href="{{url_for('delete_item', item_id=item.id)}}">Delete</a>
+            </span>
+            &nbsp; | &nbsp;
+            {% endif %}
+            <span>
+                {% if source == 'latest' %}
+                    <a href="{{url_for('main')}}">Go Back</a>
+                {% else %}
+                    <a href="{{url_for('show_items', category_id=category.id)}}">Go Back</a>
+                {% endif %}
+            </span>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

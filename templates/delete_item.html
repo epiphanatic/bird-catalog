@@ -1,0 +1,35 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Delete Item</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>Are you sure you want to delete: '<em>{{item.name}}</em>' ?</p>
+        </div>
+    </div>
+
+    <br>
+    <form action="{{ url_for('delete_item', item_id=item.id)}}"
+              method = "post">
+        <div class="row">
+            <div class="col-md-12">
+                <span>
+                    <a href = "{{url_for('main')}}"> Cancel &nbsp;&nbsp;</a>
+                </span>
+                <span>
+                    <input class="btn btn-primary" type="submit" value="Delete">
+                </span>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+{% endblock %}

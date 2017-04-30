@@ -1,0 +1,38 @@
+{% extends "content.html" %}
+
+{% block content2 %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Latest Items</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 items">
+            {% if 'username' in session %}
+            <span class="add-cat">
+              <a href="{{url_for('new_item')}}">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+                Add
+              </a>
+            </span>
+            <br><br>
+            {% endif %}
+            <ul>
+                {% for i in items %}
+                <li>
+                    <a href="{{url_for('show_description', item_id=i.id, source='latest')}}">
+                        {{i.name}} &nbsp;
+                        <span class="parent-cat">
+                            (&nbsp;<em>{{i.category_name}}</em>&nbsp;)
+                        </span>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

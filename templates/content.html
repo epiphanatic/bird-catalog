@@ -1,0 +1,51 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+
+<div class="container-fluid">
+    <div class="row">
+        <!--categories-->
+        <div class="col-md-3 cat-panel">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Categories &nbsp;</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {% if 'username' in session %}
+                    <span class="add-cat">
+                      <a href="{{url_for('new_category')}}">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        Add
+                      </a>
+                    </span>
+                    <hr>
+                    {% endif %}
+                    <ul>
+                    {% for c in categories %}
+                    <a href="{{url_for('show_items', category_id=c.id)}}">
+                        <li id="{{c.id}}">
+                            {{c.name}}
+                        </li>
+                    </a>
+                    {% endfor %}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- content sub categories, descriptions, etc-->
+        <div class="col-md-9 cat-panel">
+            {% block content2 %}
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

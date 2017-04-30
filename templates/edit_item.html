@@ -1,0 +1,70 @@
+{% extends "main.html" %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Edit Item</h2>
+        </div>
+    </div>
+    <form action="{{ url_for('edit_item', item_id=item.id)}}" method="post">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Title:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type ="text" size="40" name="name" required autofocus
+                    value="{{item.name}}"
+                >
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Description:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <textarea rows='10' cols='40' name="description" required>{{item.description}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <label>Category:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <select name="cat">
+                    {% for c in categories %}
+                        {% if c.id == item.category_id %}
+                            <option value="{{c.id}}" selected>{{c.name}}</option>
+                        {% else %}
+                            <option value="{{c.id}}">{{c.name}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+        <br>
+            <div class="col-md-12">
+                <span>
+                    <a href = "{{url_for('main')}}"> Cancel &nbsp;&nbsp;</a>
+                </span>
+                <span>
+                    <input class="btn btn-primary" type="submit" value="Save">
+                </span>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
